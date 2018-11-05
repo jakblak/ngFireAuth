@@ -1,0 +1,74 @@
+<div fxLayout="row"
+     fxLayoutAlign="space-around start"
+     class="top-container">
+ <div fxFlex="30%"
+     fxFlexOffset="250px">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput
+                name="name"
+                placeholder="City Name"
+                [(ngModel)]="city.name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput
+                name="description"
+                placeholder="Description"
+                [(ngModel)]="city.description">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput
+                name="temperature"
+                placeholder="Temp"
+                [(ngModel)]="city.temperature">
+      </mat-form-field>
+      <div *ngIf="saveForm" class="button-row" style="margin-left: 10px;">
+        <button mat-raised-button
+                color="primary"
+                (click)="addCity(city)">Submit</button>
+      </div>
+      <div *ngIf="updateForm" class="button-row" style="margin-left: 10px;">
+        <button mat-raised-button
+                color="primary"
+                (click)="saveCityUpdate(city)">Update</button>
+      </div>
+    </form>
+  </div>
+
+  <div fxFlex="40%">
+    <!-- Fix using resolvers -->
+    <div *ngIf="cities?.length === 0">
+        <h2>There are no items to list!</h2>
+    </div>
+    <mat-accordion *ngFor="let city of cities">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{city.weather.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{city.weather.description}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          {{city.weather.temperature | number:'1.0-0'}}
+          <button mat-button mat-suffix mat-icon-button
+                  color="warn"
+                  class="delete-button"
+                  aria-label="Delete"
+                  (click)="deleteCity(city.id)"
+                  matTooltip="Delete city">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-button mat-suffix mat-icon-button
+                  color="primary"
+                  class="update-button"
+                  aria-label="Delete"
+                  (click)="updateCity(city)"
+                  matTooltip="Update city">
+          <mat-icon>edit</mat-icon>
+        </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+  </div>
+</div>

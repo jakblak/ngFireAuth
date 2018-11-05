@@ -1,0 +1,10 @@
+
+<div fxLayout="row"
+     fxLayoutAlign="space-around start"
+     class="container">
+    <ngx-auth-firebaseui
+      [providers]="[providers.Google]"
+      (onSuccess)="success($event)">
+    </ngx-auth-firebaseui>
+</div>
+

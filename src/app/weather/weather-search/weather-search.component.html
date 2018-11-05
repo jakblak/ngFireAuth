@@ -1,0 +1,22 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput
+            name="query"
+            placeholder="Search Cities"
+            [(ngModel)]="query">
+  </mat-form-field>
+  <div class="button-row" style="margin-left: 10px;">
+    <button mat-raised-button
+            type="submit"
+            color="primary"
+            (click)="search(query)">Submit</button>
+  </div>
+</form>
+<!-- <h3>{{ user$?.uid }}</h3> -->
+<div *ngIf="errorMessage?.message" class="container">
+  <h2>
+      <mat-chip color="warn">
+          {{ errorMessage.message | uppercase }}
+        </mat-chip>
+  </h2>
+</div>

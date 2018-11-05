@@ -1,0 +1,26 @@
+<div *ngIf="weather?.name">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img [src]="weather.image" alt="Weather Icon">
+      </div>
+      <mat-card-title>
+        {{ weather.name }}, {{ weather.country }}
+      </mat-card-title>
+      <mat-card-subtitle>
+          {{ weather.temperature | number:'1.0-0'}} ℉
+      </mat-card-subtitle>
+    </mat-card-header>
+    <agm-map [latitude]="weather.lat" [longitude]="weather.lon">
+      <agm-marker [latitude]="weather.lat" [longitude]="weather.lon"></agm-marker>
+    </agm-map>
+    <mat-card-content class="description">
+        <h3 class="subheading-2">Conditions: </h3>
+        {{ weather.description }}
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button mat-raised-button color="primary"
+              (click)="addCity(weather)">SAVE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

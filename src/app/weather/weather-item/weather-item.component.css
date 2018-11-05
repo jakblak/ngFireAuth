@@ -1,0 +1,13 @@
+.example-card {
+  max-width: 400px;
+}
+.example-header-image {
+  background-size: cover;
+}
+.description {
+  padding-top: 10px;
+  text-align: center;
+}
+agm-map {
+  height: 300px;
+}

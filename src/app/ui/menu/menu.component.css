@@ -1,0 +1,23 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.bg-color, a:link {
+  color: white;
+  text-decoration: none;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.menu-link {
+  color: rgb(5, 5, 5) !important;
+}
