@@ -1,4 +1,4 @@
-# Ngfire
+# NgFire Weather App
 
 ## 1. EDIT THESE FILES
 - src/environments `with your firebase credentials`
