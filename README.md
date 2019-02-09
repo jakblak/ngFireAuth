@@ -1,4 +1,5 @@
 # NgFire Weather App
+- Repo for [Angular + Firestore Course](https://www.udemy.com/angular-firebase-firestore/)
 
 ## 1. EDIT THESE FILES
 - src/environments `with your firebase credentials`
